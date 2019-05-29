@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('xadmin', xadmin.site.urls),
 
-    url('^form1/$', getform)
 ]

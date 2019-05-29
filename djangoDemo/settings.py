@@ -62,8 +62,8 @@ ROOT_URLCONF = 'djangoDemo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # 设置模版的路径, 默认为空
+        'DIRS': [],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')], # 设置模版的路径, 默认为空
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

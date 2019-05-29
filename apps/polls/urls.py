@@ -1,5 +1,5 @@
 from django.urls import path
-
+from django.conf.urls import url
 from . import views
 
 app_name = 'polls'
@@ -20,5 +20,7 @@ urlpatterns = [
     # 测试模版继承
     path('test1/', views.test1, name='test1'),
 
-    path('ff/', views.getform, name='form1'),
+    # path('ff/', views.getform, name='form1'),
+
+    url('^form1/$', views.getform)
 ]

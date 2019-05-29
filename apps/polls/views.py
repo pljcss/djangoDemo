@@ -57,4 +57,4 @@ def test1(request):
 
 
 def getform(request):
-    return render(request, 'polls_login.html')
+    return render(request, 'polls/polls_login.html')
