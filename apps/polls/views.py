@@ -25,7 +25,7 @@ def index(request):
         'latest_question_list': latest_question_list,
         'ss_test': "老鸟教程教程教程教程"
     }
-    return render(request, 'polls/index.html', context)
+    return render(request, 'polls/edu_index.html', context)
 
 
 # def detail(request, question_id):

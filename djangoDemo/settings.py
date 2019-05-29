@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'crispy_forms',
     'reversion',
     # xadmin
+    'edu_users',
+    'edu_course',
+    'edu_organization',
+    'edu_operation',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -62,8 +67,8 @@ ROOT_URLCONF = 'djangoDemo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        # 'DIRS': [os.path.join(BASE_DIR, 'templates')], # 设置模版的路径, 默认为空
+        # 'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # 设置模版的路径, 默认为空
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,15 +117,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -130,3 +138,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
+AUTH_USER_MODEL = 'edu_users.UserProfile'
+
+AUTHENTICATION_BACKENDS = (
+    'edu_users.views.CustomBackend',
+)
+
+#################
+### 邮箱
+#################
+EMAIL_HOST = "smtp.163.com"      # SMTP 服务器主机
+EMAIL_PORT = 25     # 端口
+EMAIL_HOST_USER = "13196986255@163.com"   # 邮箱地址
+EMAIL_HOST_PASSWORD = "cs6255"    # 密码
+EMAIL_USE_TLS= True
+EMAIL_FROM = "13196986255@163.com"    # 邮箱地址
