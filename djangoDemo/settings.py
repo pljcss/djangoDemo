@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'edu_organization',
     'edu_operation',
     'captcha',
+    'maizi_email',
 ]
 
 MIDDLEWARE = [

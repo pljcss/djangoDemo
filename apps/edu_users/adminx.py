@@ -1,6 +1,8 @@
 import xadmin
 from .models import EmailVerifyRecord, Banner
 from xadmin import views
+
+
 #xadmin中这里是继承object，不再是继承admin
 class EmailVerifyRecordAdmin(object):
     # 显示的列
