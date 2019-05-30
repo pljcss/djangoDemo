@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from datetime import datetime
 from django.db import models
 
@@ -57,3 +58,25 @@ class CourseResource(models.Model):
     class Meta:
         verbose_name = "课程资源"
         verbose_name_plural = verbose_name
+
+
+class UserEmail(models.Model):
+    email_address = models.CharField("用户地址", max_length=20)
+
+    class Meta:
+        verbose_name = u"用户邮件表"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.email_address
+
+    def save(self, *args, **kwargs):
+
+
+        if self.email_address == "nono":
+            print("77777775555555")
+            return "添加不进去哦"
+        else:
+            self.email_address = "hehehe@qq"
+            print("777778888888", self.email_address)
+            super().save(*args, **kwargs)  # Call the "real" save() method.
