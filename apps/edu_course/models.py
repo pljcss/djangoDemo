@@ -70,13 +70,16 @@ class UserEmail(models.Model):
     def __str__(self):
         return self.email_address
 
-    def save(self, *args, **kwargs):
 
 
-        if self.email_address == "nono":
-            print("77777775555555")
-            return "添加不进去哦"
-        else:
-            self.email_address = "hehehe@qq"
-            print("777778888888", self.email_address)
-            super().save(*args, **kwargs)  # Call the "real" save() method.
+    # def save(self, *args, **kwargs):
+    #     """
+    #     自定哟save方法
+    #     """
+    #     if self.email_address == "nono":
+    #         print("77777775555555")
+    #         return "添加不进去哦"
+    #     else:
+    #         self.email_address = "hehehe@qq"
+    #         print("777778888888", self.email_address)
+    #         super().save(*args, **kwargs)  # Call the "real" save() method.

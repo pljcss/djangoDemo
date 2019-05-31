@@ -58,3 +58,9 @@ def test1(request):
 
 def getform(request):
     return render(request, 'polls/polls_login.html')
+
+
+def insertDataTo(request):
+    name = request.GET.get("name")
+    print(name)
+    return render(request, 'polls/polls_login.html')

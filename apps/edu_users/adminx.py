@@ -35,7 +35,7 @@ class BaseSetting(object):
 xadmin.site.register(views.BaseAdminView,BaseSetting)
 
 # 全局修改，固定写法
-class GlobalSettings(object):
+class GlobalSettings(object): # 名称不能改
     # 修改title
     site_title = 'Demo 管理'
     # 修改footer
@@ -43,5 +43,33 @@ class GlobalSettings(object):
     # 收起菜单
     menu_style = 'accordion'
 
+    ##### 设计左侧菜单
+    def get_site_menu(self):  # 名称不能改
+        return [
+            {
+                'title': '自定义菜单',
+                'icon': 'fa fa-bar-chart-o',
+                'menus': (
+                    {
+                        'title': '子自定义菜单1',    # 这里是你菜单的名称
+                        'url': '/xadmin/test_view',     # 这里填写你将要跳转url
+                        'icon': 'fa fa-cny'     # 这里是bootstrap的icon类名，要换icon只要登录bootstrap官网找到icon的对应类名换上即可
+                    },
+                    {
+                        'title': '子自定义菜单2',
+                        'url': 'http://www.taobao.com',
+                        'icon': 'fa fa-cny'
+                    }
+                )
+            }
+        ]
+
+
+# 注册上面填写的url
+from custom_page.views import TestView   #从你的app的view里引入你将要写的view，你也可以另外写一个py文件，把后台的view集中在一起方便管理
+xadmin.site.register_view(r'test_view/$', TestView, name='for_test')
+
+
 # 将title和footer信息进行注册
+# 注册自定义菜单
 xadmin.site.register(views.CommAdminView,GlobalSettings)

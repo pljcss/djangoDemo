@@ -1,0 +1,32 @@
+{% extends 'xadmin/base_site.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    <h1>this is a test</h1>
+
+    {{ data }}
+
+    <div>
+
+{#        <form id="reset_password_form" action="{% url 'insert_data' %}" method="post">#}
+        <form id="reset_password_form" action="/polls/form111111" >
+            <ul>
+                <li class="tes">
+                    <span class="">新 密 码 ：</span>
+                    <input type="text" name="name" id="name" placeholder="输入姓名">
+                    <i></i>
+                </li>
+
+                <li class="button">
+                    <input type="submit" value="提交">
+                </li>
+
+            </ul>
+            {% csrf_token %}
+        </form>
+
+    </div>
+
+{% endblock %}
+

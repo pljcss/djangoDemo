@@ -22,5 +22,8 @@ urlpatterns = [
 
     # path('ff/', views.getform, name='form1'),
 
-    url('^form1/$', views.getform)
+    url('^form1/$', views.getform),
+
+
+    url('^form111111/$', views.insertDataTo, name='insert_data'),
 ]
